@@ -1,0 +1,58 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+
+\begin{document}
+    
+    \begin{tikzpicture}[scale=0.5]
+        % Let us start with some contacts:
+        \foreach \x in {0,3,...,9}
+        {
+            \draw[thick] (\x,0) rectangle (\x+3,6);
+        }
+        
+        % zone of recombinaison
+        \draw[very thick,rounded corners=10pt] (3,-3) rectangle (9,9);
+        
+        % put the '+' signs
+        \foreach \x in {1.5,7.5}
+        {
+            \foreach \y in {1.5,4.5}
+            {
+                % left column
+                \node[anchor=center] at (\x-0.75,\y+0.75) {$\boldsymbol{+}$};
+                \node[anchor=center] at (\x-0.75,\y-0.75) {$\boldsymbol{+}$};
+                
+                % right column
+                \node[anchor=center] at (\x+0.75,\y+0.75) {$\boldsymbol{+}$};
+                \node[anchor=center] at (\x+0.75,\y-0.75) {$\boldsymbol{+}$};
+            }
+        }
+        
+        % put the '-' signs
+        \foreach \x in {4.5,10.5}
+        {
+            \foreach \y in {1.5,4.5}
+            {
+                % left column
+                \node[anchor=center] at (\x-0.75,\y+0.75) {$\boldsymbol{-}$};
+                \node[anchor=center] at (\x-0.75,\y-0.75) {$\boldsymbol{-}$};
+                
+                % right column
+                \node[anchor=center] at (\x+0.75,\y+0.75) {$\boldsymbol{-}$};
+                \node[anchor=center] at (\x+0.75,\y-0.75) {$\boldsymbol{-}$};
+            }
+        }
+        
+        % labels
+        \draw
+            (6,-1.5) node[anchor=center] { $\substack{\textsf{Zone}\\\\\textsf{de}\\\\\textsf{recombinaison}}$}
+            (4.5,7)  node[anchor=center] {\large $\mathsf{A_1}$}
+            (7.5,7)  node[anchor=center] {\large $\mathsf{A_2}$};
+    \end{tikzpicture}
+    
+\end{document}

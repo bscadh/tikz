@@ -16,17 +16,17 @@
         
         % draw the axis
         \draw[very thick,<->] (0,-3.5) -- (0,3.5) node[above right,near end,sloped] {\scriptsize $\mathsf{Potentiel}$};
-        \draw[very thick,<->] (-5.5,0) node[below] {\scriptsize $\mathsf{P}$} -- (5.5,0) node[below] {\scriptsize $\mathsf{N}$};
+        \draw[very thick,<->] (-5.5,0) node[below] {\scriptsize $\mathsf{N}$} -- (5.5,0) node[below] {\scriptsize $\mathsf{P}$};
         
         % draw the sine function
         \draw[ultra thick,domain=-pi:pi,samples=100,smooth] plot(\x,{2*sin(\x r)});
         
         % put the '+' and '-' signs
-        \draw (1.5,0.5) node {$\boldsymbol{+}$};
+        \draw (1.5,0.5)   node {$\boldsymbol{+}$};
         \draw (-1.5,-0.5) node {$\boldsymbol{-}$};
         
         % labels
-        \draw (1.5,1.5) node {$\mathsf{A_1}$};
+        \draw (1.5,1.5)   node {$\mathsf{A_1}$};
         \draw (-1.5,-1.5) node {$\mathsf{A_2}$};
         \filldraw (0,0) circle(2.5pt) node[below right] {$\mathsf{0}$};
     \end{tikzpicture}
