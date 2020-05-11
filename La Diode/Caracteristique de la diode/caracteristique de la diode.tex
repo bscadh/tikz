@@ -1,0 +1,33 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[svgnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+    
+    \begin{tikzpicture}[line cap=round,line join=round,>=Stealth,x=1cm,y=1cm]
+        % draw the grid
+        \draw[thin,color=black!50,dotted] (-5,-4) grid (5,4);
+        
+        % draw the axis
+        \draw[very thick,<->] (0,-5) -- (0,5) node[below left] {\scriptsize $\mathsf{I}$};
+        \draw[very thick,<->] (-6,0) -- (6,0) node[below left] {\scriptsize $\mathsf{V}$};
+        
+        % draw the function
+        \draw[ultra thick,domain=0:1.35,samples=100,smooth] plot(\x,{sec(\x r)-1})
+             [ultra thick,domain=-4.5:-3.2,samples=100,smooth] plot(\x,{sec(\x r)+0.8});
+        \draw[ultra thick] (-3.3,-0.2) -- (0,0);
+        
+        % labels
+        \draw
+            (-4.75,0) node[below] {\scriptsize $\mathsf{V_c}$}
+            (1.5,0)   node[below] {\scriptsize $\mathsf{V_s}$}
+            (0,0)     node[below left] {\scriptsize $\mathsf{0}$};
+    \end{tikzpicture}
+    
+\end{document}

@@ -6,7 +6,6 @@
 
 \usepackage[svgnames]{xcolor}
 \usepackage{tikz}
-\usepackage{tikzscale}
 \usetikzlibrary{arrows.meta}
 
 \begin{document}
@@ -17,14 +16,14 @@
         
         % draw the axis
         \draw[very thick,<->] (0,-3.5) -- (0,3.5) node[above right,near end,sloped] {\scriptsize $\mathsf{Potentiel}$};
-        \draw[very thick,<->] (-5.5,0) node[left] {\scriptsize $\mathsf{P}$} -- (5.5,0) node[right] {\scriptsize $\mathsf{N}$};
+        \draw[very thick,<->] (-5.5,0) node[below] {\scriptsize $\mathsf{P}$} -- (5.5,0) node[below] {\scriptsize $\mathsf{N}$};
         
         % draw the sine function
         \draw[ultra thick,domain=-pi:pi,samples=100,smooth] plot(\x,{2*sin(\x r)});
         
         % put the '+' and '-' signs
-        \draw (1.5,0.5) node {$+$};
-        \draw (-1.5,-0.5) node {$-$};
+        \draw (1.5,0.5) node {$\boldsymbol{+}$};
+        \draw (-1.5,-0.5) node {$\boldsymbol{-}$};
         
         % labels
         \draw (1.5,1.5) node {$\mathsf{A_1}$};
