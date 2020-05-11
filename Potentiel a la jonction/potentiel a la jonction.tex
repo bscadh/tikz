@@ -1,0 +1,35 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[svgnames]{xcolor}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+    
+    \begin{tikzpicture}[line cap=round,line join=round,>=Stealth,x=1cm,y=1cm]
+        % draw the grid
+        \draw[thin,color=black!50,dotted] (-5,-3) grid (5,3);
+        
+        % draw the axis
+        \draw[very thick,<->] (0,-3.5) -- (0,3.5) node[above right,near end,sloped] {\scriptsize $\mathsf{Potentiel}$};
+        \draw[very thick,<->] (-5.5,0) node[left] {\scriptsize $\mathsf{P}$} -- (5.5,0) node[right] {\scriptsize $\mathsf{N}$};
+        
+        % draw the sine function
+        \draw[ultra thick,domain=-pi:pi,samples=100,smooth] plot(\x,{2*sin(\x r)});
+        
+        % put the '+' and '-' signs
+        \draw (1.5,0.5) node {$+$};
+        \draw (-1.5,-0.5) node {$-$};
+        
+        % labels
+        \draw (1.5,1.5) node {$\mathsf{A_1}$};
+        \draw (-1.5,-1.5) node {$\mathsf{A_2}$};
+        \filldraw (0,0) circle(2.5pt) node[below right] {$\mathsf{0}$};
+    \end{tikzpicture}
+    
+\end{document}
