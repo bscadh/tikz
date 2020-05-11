@@ -1,0 +1,49 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+
+\begin{document}
+    
+    \begin{tikzpicture}[scale=0.5]
+        % Let us start with some contacts:
+        \foreach \x in {0,6}
+        {
+            \draw[thick] (\x,0) rectangle (\x+6,6);
+        }
+        
+        % put the '+' signs
+        \foreach \x in {1.5,4.5}
+        {
+            \foreach \y in {1.5,4.5}
+            {
+                % left column
+                \node[anchor=center] at (\x-0.75,\y+0.75) {$\boldsymbol{+}$};
+                \node[anchor=center] at (\x-0.75,\y-0.75) {$\boldsymbol{+}$};
+                
+                % right column
+                \node[anchor=center] at (\x+0.75,\y+0.75) {$\boldsymbol{+}$};
+                \node[anchor=center] at (\x+0.75,\y-0.75) {$\boldsymbol{+}$};
+            }
+        }
+        
+        % put the '-' signs
+        \foreach \x in {7.5,10.5}
+        {
+            \foreach \y in {1.5,4.5}
+            {
+                % left column
+                \node[anchor=center] at (\x-0.75,\y+0.75) {$\boldsymbol{-}$};
+                \node[anchor=center] at (\x-0.75,\y-0.75) {$\boldsymbol{-}$};
+                
+                % right column
+                \node[anchor=center] at (\x+0.75,\y+0.75) {$\boldsymbol{-}$};
+                \node[anchor=center] at (\x+0.75,\y-0.75) {$\boldsymbol{-}$};
+            }
+        }
+    \end{tikzpicture}
+    
+\end{document}
